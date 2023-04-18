@@ -1,0 +1,17 @@
+{% extends 'main/layout.html' %}
+
+{% block title %} Добавление статьи {%endblock%}
+
+{% block content %}
+    <div class = "features">
+        <form name="test" method="post">
+            {% csrf_token %}
+            {% for elem in form %}
+                {{elem}} <br>
+            {% endfor %}
+            <p><input type="submit" value="Отправить">
+            <input type="reset" value="Очистить"></p>
+
+        </form>
+    </div>
+{%endblock%}

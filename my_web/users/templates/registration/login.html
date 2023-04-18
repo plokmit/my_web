@@ -1,0 +1,23 @@
+{% extends 'main/layout.html' %}
+
+{% block title %} Login {%endblock%}
+
+{% block content %}
+    <div class = 'Features'>
+        <h1>Войти в аккаунт </h1>
+
+        {% if form.errors %}
+            <p> {{form.errors.error}}</p>
+        {% endif %}
+        <form action="{% url 'login'%} " method = 'post'>
+            {% csrf_token %}
+            {{ form }}
+            <a href="{% url 'password_reset' %}"> Забыли пароль? </a>
+
+            <button type="submit" class="btn btn-success"> Зайти в аккаунт </button>
+        </form>
+
+
+    </div>
+
+{%endblock%}

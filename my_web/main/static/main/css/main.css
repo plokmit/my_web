@@ -1,0 +1,57 @@
+body {
+    background: #aea4a3;
+}
+
+aside {
+    float: left;
+    background: #362d30;
+    width: 20%;
+    padding: 2.5%;
+    height: 100vh;
+    color: #fff;
+    border-right: 5px solid #4d4d4d;
+}
+
+main img {
+    width: 150px;
+    float: left;
+}
+
+aside .logo {
+    font-size: 40px;
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+aside h3 {
+    magin-top: 25px;
+    font-size: 28px;
+}
+
+aside ul {
+    list-style: none;
+    text-decoration: none;
+}
+
+aside ul li {
+    color: #fff;
+    display: block;
+    margin-top: 20px;
+    transition: all .6s ease;
+}
+
+aside ul li, aside ul a { text-decoration: none;}
+
+aside ul li:hover, aside ul a:hover {
+    color: #eb5959;
+    text-decoration: none;
+    transform: scale(1.05);
+}
+
+.alert-warning {
+    float: left;
+    clear: both;
+    width: 400px;
+    margin: 20px;
+    text-align: left;
+}

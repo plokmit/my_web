@@ -1,0 +1,17 @@
+{% extends 'main/layout.html' %}
+
+{% block title %} balance {%endblock%}
+
+{% block content %}
+    <div class = 'Features'>
+        <h1> Баланс игрока </h1>
+
+        {% if user.is_authenticated %}
+            {{ balance }}
+            {% csrf_token %}
+        {% else %}
+            <p>Пожалуйста, зайдите в свой аккаунт</p>
+            <a href="{% url 'login' %} "> Зайти в аккаунт </a>
+        {% endif %}
+    </div>
+{%endblock%}

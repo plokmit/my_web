@@ -1,0 +1,15 @@
+{% extends 'main/layout.html' %}
+
+{% block title %} Login {%endblock%}
+
+{% block content %}
+    <div class = 'Features'>
+        <h1> Зарегистрироваться </h1>
+        <form action="{% url 'register'%}" method = 'post'>
+
+            {{form}}
+            {% csrf_token %}
+            <button type="submit" class="btn btn-success"> Зарегистрироваться </button>
+        </form>
+    </div>
+{%endblock%}
