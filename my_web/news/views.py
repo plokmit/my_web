@@ -37,3 +37,4 @@ def create(request):
         'form':form,
     }
     return render(request, 'news/create.html', data)
+

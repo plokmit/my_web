@@ -1,0 +1,13 @@
+{% extends 'main/layout.html' %}
+
+{% block title %} Game {%endblock%}
+
+{% block content %}
+    <h1> Игра </h1>
+    <form method="post" action="new_game/">
+        {% csrf_token %}
+        <p>Число, на которое вы хотите поставить:<br> <input name="number" type="number" min="0" max="36"/></p>
+        <p>Сумма ставки (меньше вашего баланса): <br> <input name="bet" type="number" min="50" max="100000"/></p>
+        <input type="submit" value="Send" />
+    </form>
+{%endblock%}
