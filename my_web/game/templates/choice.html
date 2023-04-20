@@ -1,0 +1,59 @@
+{% extends 'game.html' %}
+
+{% block content %}
+    <form method="post" action="result/">
+        {% csrf_token %}
+        {% if choice_bet == 1 %}
+            <p>Число, на которое вы хотите поставить:<br>
+                <input name="number" type="number" min="0" max="36"/> </p>
+        {% endif %}
+
+        {% if choice_bet == 2 %}
+            <p>2 числа, на которые вы хотите поставить:<br>
+                <input name="number" type="number" min="0" max="36"/><br>
+                <input name="number" type="number" min="0" max="36"/><br>
+            </p>
+        {% endif %}
+
+        {% if choice_bet == 3 %}
+            <p>Число, на которое вы хотите поставить:<br>
+                <input name="number" type="number" min="0" max="36"/><br>
+                <input name="number" type="number" min="0" max="36"/><br>
+                <input name="number" type="number" min="0" max="36"/><br>
+                <input name="number" type="number" min="0" max="36"/><br>
+            </p>
+        {% endif %}
+
+        {% if choice_bet == 4 %}
+        Числа, на которые вы хотите поставить:
+            <p><br>
+                <input name="number" type="number" min="0" max="36"/><br>
+                <input name="number" type="number" min="0" max="36"/><br>
+                <input name="number" type="number" min="0" max="36"/><br>
+                <input name="number" type="number" min="0" max="36"/><br>
+            </p>
+        {% endif %}
+
+        {% if choice_bet == 5 %}
+            <p>Числа, на которое вы хотите поставить:<br>
+                <p><select name="number" size="2" multiple>
+                        <option value="1">Красные</option>
+                        <option value="2">Черные</option>
+                    </select>
+                </p>
+        {% endif %}
+
+        {% if choice_bet == 6 %}
+        <p>Число, на которое вы хотите поставить:<br></p>
+                <p><select name="number" size="2" multiple>
+                    <option value="1">Нечетные</option>
+                    <option value="2">Четные</option>
+                    </select>
+                </p>
+        {% endif %}
+
+        <p>Сумма ставки (меньше вашего баланса): <br>
+            <input name="bet" type="number" min="50" max="100000"/></p>
+        <input type="submit" value="Send" />
+    </form>
+{% endblock %}

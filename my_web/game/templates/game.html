@@ -6,8 +6,15 @@
     <h1> Игра </h1>
     <form method="post" action="new_game/">
         {% csrf_token %}
-        <p>Число, на которое вы хотите поставить:<br> <input name="number" type="number" min="0" max="36"/></p>
-        <p>Сумма ставки (меньше вашего баланса): <br> <input name="bet" type="number" min="50" max="100000"/></p>
+        <p><select name="choice_bet" size="6" multiple>
+            <option selected value="1">Straight bet</option>
+            <option value="2">Split bet</option>
+            <option value="3">Basket bet</option>
+            <option value="4">Four numbers bet</option>
+            <option value="5">Red or black</option>
+            <option value="6">Even or odd</option>
+        </select> </p>
         <input type="submit" value="Send" />
+
     </form>
 {%endblock%}

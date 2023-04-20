@@ -4,7 +4,11 @@
 
 {% block content %}
     <h1> Игра </h1>
-    <p>Ваша ставка: {{number}}</p>
+    <p>Ваша ставка:
+        {% for el in number %}
+            {{ el }}
+        {% endfor %}
+    </p>
     <p>Результат: {{res_of_number}} {{color}}</p>
     <p>{{message}}</p>
     <p>Ваш баланс: {{balance}}</p>
